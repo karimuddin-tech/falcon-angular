@@ -1,0 +1,46 @@
+input {
+  width: 100% !important;
+  border: none;
+  height: 45px !important;
+}
+.top-date div {
+  float: right;
+}
+.top-date div span {
+  position: relative;
+  right: 20px;
+  color: #d92731;
+}
+.bg-red {
+  background-color: #d92731;
+  text-align: center;
+  color: #ffffff;
+  padding: 16px 0px 6px;
+}
+::ng-deep .mat-typography h1 {
+  font-size: 26px;
+  font-weight: 500;
+}
+td {
+  padding: 0;
+}
+.mytr {
+  height: 45px;
+}
+
+.date-picker {
+  border: 1px solid #b5b4b3 !important;
+}
+
+.add-btn {
+  margin-top: 16px;
+  float: right;
+  background-color: #ae8913;
+  border: 0px;
+  border-radius: 10px;
+  padding: 8px 60px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 200;
+  height: 50px;
+}

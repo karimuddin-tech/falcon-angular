@@ -1,0 +1,88 @@
+<h1 mat-dialog-title>Please fill this data to continue</h1>
+<hr />
+<div mat-dialog-content>
+  <form
+    #flightForm="ngForm"
+    (ngSubmit)="onSubmit(flightForm.value)"
+    class="mt-4 col-12 p-0"
+  >
+    <div class="row">
+      <div class="col-12 mb-4">
+        <table>
+          <tr>
+            <th class="text-left">FLIGHT NUMBER</th>
+            <th class="text-left">DATE</th>
+            <th class="text-left">FROM</th>
+            <th class="text-left">TO</th>
+            <th class="text-left">BLOCKS OFF</th>
+          </tr>
+          <tr *ngFor="let leg of legDetails">
+            <td>
+              <input type="text" matInput  matInput [(ngModel)]="leg.flt_no" #myModel="ngModel" name="flt_no" />
+            </td>
+            <td>
+              <input type="text" matInput  matInput [(ngModel)]="leg.date  " #myModel="ngModel" name="date" />
+            </td>
+            <td>
+              <input type="text" matInput  matInput [(ngModel)]="leg.from  " #myModel="ngModel" name="from" />
+            </td>
+            <td>
+              <input type="text" matInput  matInput [(ngModel)]="leg.to  " #myModel="ngModel" name="to" />
+            </td>
+            <td>
+              <input type="text" matInput  matInput [(ngModel)]="leg.blocks_off  " #myModel="ngModel" name="blocks_off" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-12 mb-4">
+        <table>
+          <tr>
+            <th class="text-left">TAKE OFF</th>
+            <th class="text-left">LANDING</th>
+            <th class="text-left">BLOCKS ON</th>
+            <th class="text-left">BLOCKS TIME</th>
+            <th class="text-left">BLOCKS TIME</th>
+          </tr>
+          <tr *ngFor="let leg of legDetails">
+            <td>
+              <input type="text" matInput [(ngModel)]="leg.take_off1  " #myModel="ngModel" name="take_off1" />
+            </td>
+            <td>
+              <input type="text" matInput [(ngModel)]="leg.landing  " #myModel="ngModel" name="landing" />
+            </td>
+            <td>
+              <input type="text" matInput [(ngModel)]="leg.blocks_on  " #myModel="ngModel" name="blocks_on" />
+            </td>
+            <td>
+              <input type="text" matInput [(ngModel)]="leg.block_time  " #myModel="ngModel" name="block_time" />
+            </td>
+            <td>
+              <input type="text" matInput [(ngModel)]="leg.air_time  " #myModel="ngModel" name="air_time" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-12 mb-4">
+        <table>
+          <tr>
+            <th class="text-left">NIGHT TIME</th>
+            <th class="text-left">TAKE OFF</th>
+          </tr>
+          <tr *ngFor="let leg of legDetails">
+            <td>
+              <input type="text" matInput [(ngModel)]="leg.night_time  " #myModel="ngModel" name="night_time" />
+            </td>
+            <td>
+              <input type="text" matInput [(ngModel)]="leg.take_off2  " #myModel="ngModel" name="take_off2" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">submit</button></mat-dialog-actions
+    >
+  </form>
+</div>

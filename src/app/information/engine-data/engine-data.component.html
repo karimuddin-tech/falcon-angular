@@ -1,0 +1,44 @@
+<div class="col-12 mt-3">
+  <mat-accordion multi>
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header>
+        <mat-panel-title> ENGINE DATA </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="text-right mt-4">
+        <button class="add" mat-button (click)="openAdd()">
+          ADD <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <div class="mt-3 col-12 p-0">
+        <div class="row">
+          <div class="col-12">
+            <table>
+              <tr>
+                <th rowspan="2">OAT</th>
+                <th>ENG # 1</th>
+                <th>ENG # 2</th>
+                <th rowspan="2">T/O PWR FULL-F REDUCED-R</th>
+                <th rowspan="2">EDIT</th>
+              </tr>
+              <tr>
+                <th>EGT/ITT</th>
+                <th>EGT/ITT</th>
+              </tr>
+              <tr *ngFor="let eng of engineStarts">
+                <td>{{ eng.oat }}</td>
+                <td>{{ eng.egt_itt_eng1 }}</td>
+                <td>{{ eng.egt_itt_eng2 }}</td>
+                <td>{{ eng.to_pwr }}</td>
+                <td class="text-center">
+                  <button mat-button (click)="edit(eng.id)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

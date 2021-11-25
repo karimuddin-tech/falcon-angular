@@ -1,0 +1,107 @@
+<h1 mat-dialog-title>Please fill this data to continue</h1>
+<hr />
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mt-4 col-12 p-0">
+    <div class="row">
+      <div class="col-12 mb-4">
+        <table>
+          <thead>
+            <tr>
+              <th class="text-left">Serial No</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" matInput formControlName="serial_no" />
+                <span>
+                  <mat-error *ngIf="formControl.serial_no.errors?.required && (formControl.serial_no.dirty || formControl.serial_no.touched)">Required</mat-error>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-6">
+        <table>
+          <thead>
+            <tr>
+              <th class="text-center">Leg No</th>
+              <th class="text-center">Page No</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" matInput formControlName="no_legs" />
+                <span>
+                  <mat-error *ngIf="formControl.no_legs.errors?.required && (formControl.no_legs.dirty || formControl.no_legs.touched)">Required</mat-error>
+                </span>
+              </td>
+              <td>
+                <input type="text" matInput formControlName="page_no" />
+                <span>
+                  <mat-error *ngIf="formControl.page_no.errors?.required && (formControl.page_no.dirty || formControl.page_no.touched)">Required</mat-error>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-6">
+        <table>
+          <thead>
+            <tr>
+              <th class="text-center">COCKPIT</th>
+              <th class="text-center">CABIN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" matInput formControlName="cockpit" />
+                <span>
+                  <mat-error *ngIf="formControl.cockpit.errors?.required && (formControl.cockpit.dirty || formControl.cockpit.touched)">Required</mat-error>
+                </span>
+              </td>
+              <td>
+                <input type="text" matInput formControlName="cabin" />
+                <span>
+                  <mat-error *ngIf="formControl.cabin.errors?.required && (formControl.cabin.dirty || formControl.cabin.touched)">Required</mat-error>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 mt-4">
+        <table>
+          <thead>
+            <tr>
+              <th class="text-center">AIRCRAFT TYPE</th>
+              <th class="text-center">AIRCRAFT REGISTRATION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" matInput formControlName="aircraft_type" />
+                <span>
+                  <mat-error *ngIf="formControl.aircraft_type.errors?.required && (formControl.aircraft_type.dirty || formControl.aircraft_type.touched)">Required</mat-error>
+                </span>
+              </td>
+              <td>
+                <input type="text" matInput formControlName="aircraft_registration" />
+                <span>
+                  <mat-error *ngIf="formControl.aircraft_registration.errors?.required && (formControl.aircraft_registration.dirty || formControl.aircraft_registration.touched)">Required</mat-error>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <mat-dialog-actions> <button mat-button type="submit">submit</button></mat-dialog-actions>
+  </form>
+</div>

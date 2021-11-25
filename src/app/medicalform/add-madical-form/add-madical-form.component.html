@@ -1,0 +1,282 @@
+<html class="p-5">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+  </head>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <header>
+      <div class="row mb-2 m-auto">
+        <div class="col-md-2 p-0">
+          <img class="w-100" src="assets\images\logo.svg" />
+        </div>
+        <div class="col-md-10 top-date m-auto">
+          <div class="row align-items-center">
+            <div class="col-3"><span>Confidential</span></div>
+            <div class="col-8"><input type="date" class="date-picker" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="row bg-red m-auto mt-4">
+        <h1>Pilots Licence and Medical Expiry</h1>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <table class="log">
+            <tbody>
+              <tr>
+                <td colspan="2" class="td-left">
+                  <input type="text" formControlName="pilot_name" />
+                </td>
+              </tr>
+              <tr class="yellow">
+                <th>LOG ID</th>
+                <th class="p-0 text-center">
+                  <input type="text" formControlName="log_id" />
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </header>
+    <main class="mt-5">
+      <div class="row mt-2">
+        <div class="col-md-7">
+          <table class="ref yellow">
+            <tr>
+              <th>REFF.NO</th>
+              <th>STAFF.NO</th>
+              <th>LIC.TYPE</th>
+              <th>LIC.NO</th>
+              <th>AC TYPE</th>
+              <th>ENG.LANG.PRO</th>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" formControlName="reff_no" />
+              </td>
+              <td>
+                <input type="text" formControlName="staff_no" />
+              </td>
+              <td>
+                <input type="text" formControlName="lic_type" />
+              </td>
+              <td>
+                <input type="text" formControlName="lic_no" />
+              </td>
+              <td>
+                <input type="text" formControlName="ac_type" />
+              </td>
+              <td>
+                <input type="text" formControlName="eng_lang_pro" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4">LICENSE VALIDILITY</th>
+            </tr>
+            <tr>
+              <th>FROM - TO</th>
+              <td>
+                <input type="date" name="date" formControlName="license_valid_from" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="license_valid_to" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4">IRA ME</th>
+              <th colspan="1">LIMIT</th>
+            </tr>
+            <tr>
+              <th>PPC</th>
+              <td>
+                <input type="date" formControlName="ppc_valid_from" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="ppc_valid_to" placeholder="select date" />
+              </td>
+              <td colspan="1" class="expired">
+                <input type="text" formControlName="ppc_limit" />
+              </td>
+            </tr>
+            <tr>
+              <th>OPC</th>
+              <td>
+                <input type="date" name="date" formControlName="opc_valid_from" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="opc_valid_to" placeholder="select date" />
+              </td>
+              <td colspan="1" class="expired">
+                <input type="text" formControlName="opc_limit" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4">CERTIFICATE OF TRAINING</th>
+            </tr>
+            <tr>
+              <th colspan="1">DETAILS</th>
+              <th colspan="1">ISSUE DATE</th>
+              <th colspan="2">VALID UPTO</th>
+            </tr>
+            <tr>
+              <th>SPEC-EVAC-FIRE</th>
+              <td>
+                <input type="date" name="date" formControlName="spec_evac_fire_issue_date" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="spec_evac_fire_valid_upto" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th>WET DRILL</th>
+              <td>
+                <input type="date" name="date" formControlName="wet_drill_issue_date" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="wet_drill_valid_upto" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th>TYPE TECH REF</th>
+              <td>
+                <input type="date" name="date" formControlName="type_tech_ref_issue_date" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="type_tech_ref_valid_upto" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th>ROUTE CHK</th>
+              <td>
+                <input type="date" name="date" formControlName="route_chk_issue_date" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="route_chk_valid_upto" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th>CRM</th>
+              <td>
+                <input type="date" name="date" formControlName="crm_issue_date" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="crm_valid_upto" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th>DGR</th>
+              <td>
+                <input type="date" name="date" formControlName="dgr_issue_date" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="dgr_valid_upto" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th>AV SEC</th>
+              <td>
+                <input type="date" name="date" formControlName="av_sec_issue_date" placeholder="select date" />
+              </td>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="av_sec_valid_upto" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4" style="background-color: #d7d6d6; height: 15px"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-5">
+          <table class="data">
+            <tr class="mytr">
+              <td colspan="2" class="td-green">DATA NOT FOUND</td>
+              <td colspan="2" class="td-yellow">NEAR TO EXPIRY</td>
+            </tr>
+            <tr>
+              <th colspan="6">MEDICAL CERTIFICATE</th>
+            </tr>
+            <tr>
+              <th colspan="2">DATE OF MED EXAM</th>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="medical_exam_date" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2">VALID UPTO</th>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="medical_exam_valid_upto" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2">TEST</th>
+              <th colspan="2">NEXT DUE</th>
+            </tr>
+            <tr>
+              <th colspan="2">SINGLE MED</th>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="single_med_next_due" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2">MED BOARD</th>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="med_board_next_due" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2">ECG</th>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="ecg_next_due" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2">ETT</th>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="ett_next_due" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2">X-RAY CHEST</th>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="xray_chest_next_due" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2">AUDIOMATRY</th>
+              <td colspan="2">
+                <input type="date" name="date" formControlName="audiomatry_next_due" placeholder="select date" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="6">ON NEXT MEDICAL</th>
+            </tr>
+            <tr>
+              <td colspan="6">
+                <input type="text" formControlName="on_next_medical" />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="6">FLYING HOURS</th>
+            </tr>
+            <tr>
+              <th colspan="3">TOTAL HOURS</th>
+              <th colspan="3">LAST SIX MONTHS</th>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <input type="text" formControlName="total_hours" />
+              </td>
+              <td colspan="3">
+                <input type="text" formControlName="l_183_days" />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+    <div class="row">
+      <div class="col-12"><button class="add-btn" type="submit">submit</button></div>
+    </div>
+  </form>
+</html>

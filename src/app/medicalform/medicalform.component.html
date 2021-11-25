@@ -1,0 +1,334 @@
+<html class="p-5">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+  </head>
+  <header>
+    <div class="row mb-2 m-auto">
+      <div class="col-md-2 p-0">
+        <img class="w-100" src="assets\images\logo.svg" />
+      </div>
+      <div class="col-md-10 top-date m-auto">
+        <div><span>Confidential</span><input type="text" disabled [(ngModel)]="dateNow" name="date" placeholder="1/10/2" /></div>
+      </div>
+    </div>
+    <div class="row bg-red m-auto mt-4">
+      <h1>Pilots Licence and Medical Expiry</h1>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <form>
+          <table class="log">
+            <tbody>
+              <tr>
+                <td colspan="2" class="td-left">
+                  {{ data.pilot_name }}
+                </td>
+              </tr>
+              <tr class="yellow">
+                <th>LOG ID</th>
+                <th class="p-0 text-center">
+                  <select #Select (change)="consoleLog(Select.value)" style="width: 100%">
+                    <!-- <option disabled selected></option> -->
+                    <option *ngFor="let item of ddpValues" [value]="item.id">{{ item.id }}</option>
+                  </select>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main class="mt-5">
+    <div class="row mt-2">
+      <div class="col-md-7">
+        <table class="ref yellow">
+          <caption class="w-100 text-center"></caption>
+          <tr>
+            <th>REFF.NO</th>
+            <th>STAFF.NO</th>
+            <th>LIC.TYPE</th>
+            <th>LIC.NO</th>
+            <th>AC TYPE</th>
+            <th>ENG.LANG.PRO</th>
+          </tr>
+          <tr>
+            <td>
+              {{ data.reff_no }}
+            </td>
+            <td>
+              {{ data.staff_no }}
+            </td>
+            <td>
+              {{ data.lic_type }}
+            </td>
+            <td>
+              {{ data.lic_no }}
+            </td>
+            <td>
+              {{ data.ac_type }}
+            </td>
+            <td>
+              {{ data.eng_lang_pro }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="4">LICENSE VALIDILITY</th>
+            <th colspan="2">DAYS LEFT</th>
+          </tr>
+          <tr>
+            <th>FROM - TO</th>
+            <td>
+              {{ data.license_valid_from | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.license_valid_to | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired valid">
+              {{ data.license_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="4">IRA ME</th>
+            <th colspan="1">DAYS LEFT</th>
+            <th colspan="1">LIMIT</th>
+          </tr>
+          <tr>
+            <th>PPC</th>
+            <td>
+              {{ data.ppc_valid_from | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.ppc_valid_to | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="1" class="expired">
+              {{ data.ppc_days_left }}
+            </td>
+            <td colspan="1" class="expired">
+              {{ data.ppc_limit }}
+            </td>
+          </tr>
+          <tr>
+            <th>OPC</th>
+            <td>
+              {{ data.opc_valid_from | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.opc_valid_to | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="1" class="expired">
+              {{ data.opc_days_left }}
+            </td>
+            <td colspan="1" class="expired">
+              {{ data.opc_limit }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="6">CERTIFICATE OF TRAINING</th>
+          </tr>
+          <tr>
+            <th colspan="1">DETAILS</th>
+            <th colspan="1">ISSUE DATE</th>
+            <th colspan="2">VALID UPTO</th>
+            <th colspan="2">DAYS LEFT</th>
+          </tr>
+          <tr>
+            <th>SPEC-EVAC-FIRE</th>
+            <td>
+              {{ data.spec_evac_fire_issue_date | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.spec_evac_fire_valid_upto | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.spec_evac_fire_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th>WET DRILL</th>
+            <td>
+              {{ data.wet_drill_issue_date | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.wet_drill_valid_upto | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.wet_drill_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th>TYPE TECH REF</th>
+            <td>
+              {{ data.type_tech_ref_issue_date | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.type_tech_ref_valid_upto | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.type_tech_ref_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th>ROUTE CHK</th>
+            <td>
+              {{ data.route_chk_issue_date | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.route_chk_valid_upto | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.route_chk_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th>CRM</th>
+            <td>
+              {{ data.crm_issue_date | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.crm_valid_upto | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.crm_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th>DGR</th>
+            <td>
+              {{ data.dgr_issue_date | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.dgr_valid_upto | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.dgr_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th>AV SEC</th>
+            <td>
+              {{ data.av_sec_issue_date | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2">
+              {{ data.av_sec_valid_upto | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.av_sec_days_left }}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-5">
+        <table class="data">
+          <tr>
+            <td colspan="2" class="td-green">DATA NOT FOUND</td>
+            <td colspan="2" class="td-yellow">NEAR TO EXPIRY</td>
+            <td colspan="2" class="td-red">EXPIRED</td>
+          </tr>
+          <tr>
+            <th colspan="6">MEDICAL CERTIFICATE</th>
+          </tr>
+          <tr>
+            <th colspan="2">DATE OF MED EXAM</th>
+            <td colspan="2" [class]="data.medical_exam_date ? '' : dnf">
+              {{ data.medical_exam_date | date: "dd-MMM-yy" }}
+            </td>
+            <th colspan="2">DAYS LEFT</th>
+          </tr>
+          <tr>
+            <th colspan="2">VALID UPTO</th>
+            <td colspan="2">
+              {{ data.medical_exam_valid_upto | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.medical_exam_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">TEST</th>
+            <th colspan="2">NEXT DUE</th>
+            <th colspan="2">DAYS LEFT</th>
+          </tr>
+          <tr>
+            <th colspan="2">SINGLE MED</th>
+            <td colspan="2">
+              {{ data.single_med_next_due | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.single_med_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">MED BOARD</th>
+            <td colspan="2">
+              {{ data.med_board_next_due | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.med_board_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">ECG</th>
+            <td colspan="2">
+              {{ data.ecg_next_due | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.ecg_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">ETT</th>
+            <td colspan="2">
+              {{ data.ett_next_due | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.ett_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">X-RAY CHEST</th>
+            <td colspan="2">
+              {{ data.xray_chest_next_due | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.xray_chest_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">AUDIOMATRY</th>
+            <td colspan="2">
+              {{ data.audiomatry_next_due | date: "dd-MMM-yy" }}
+            </td>
+            <td colspan="2" class="expired">
+              {{ data.audiomatry_days_left }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="6">ON NEXT MEDICAL</th>
+          </tr>
+          <tr>
+            <td colspan="6">
+              {{ data.on_next_medical }}
+            </td>
+          </tr>
+          <tr>
+            <th colspan="6">FLYING HOURS</th>
+          </tr>
+          <tr>
+            <th colspan="3">TOTAL HOURS</th>
+            <th colspan="3">LAST SIX MONTHS</th>
+          </tr>
+          <tr>
+            <td colspan="3">
+              {{ data.total_hours }}
+            </td>
+            <td colspan="3">
+              {{ data.l_183_days }}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+</html>

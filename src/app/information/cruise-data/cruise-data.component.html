@@ -1,0 +1,95 @@
+<div class="col-12 mt-3">
+  <mat-accordion multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> CRUISE DATA </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="text-right mt-4">
+        <button class="add" mat-button (click)="openAdd()">
+          ADD <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <div class="mt-3 col-12 p-0">
+        <div class="row">
+          <div class="col-12">
+            <table>
+              <tr>
+                <th rowspan="2">LEG NO</th>
+                <th rowspan="2">UTC</th>
+                <th rowspan="2">GROSS WT</th>
+                <th rowspan="2">FLT LVL</th>
+                <th rowspan="2">TAT</th>
+                <th rowspan="2">SAT</th>
+                <th rowspan="2">MACH</th>
+                <th rowspan="2">IAS</th>
+                <th colspan="2">AC PACK</th>
+              </tr>
+              <tr>
+                <th colspan="1">#1</th>
+                <th colspan="1">#2</th>
+              </tr>
+              <tr *ngFor="let cruise of cruiseData">
+                <td>{{ cruise.leg_no }}</td>
+                <td>{{ cruise.utc }}</td>
+                <td>{{ cruise.gross_wt }}</td>
+                <td>{{ cruise.flt_lvl }}</td>
+                <td>{{ cruise.tat }}</td>
+                <td>{{ cruise.sat }}</td>
+                <td>{{ cruise.mach }}</td>
+                <td>{{ cruise.ias }}</td>
+                <td>{{ cruise.ac_pack_1 }}</td>
+                <td>{{ cruise.ac_pack_2 }}</td>
+                <td>
+                  <button class="add mr-3" mat-button (click)="openAdd()">
+                    EDIT <mat-icon>edit</mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </table>
+            <table class="mt-3">
+              <tr>
+                <th colspan="10">PARAMETER</th>
+              </tr>
+              <tr>
+                <th colspan="1"></th>
+                <th colspan="1">EPR/TQ</th>
+                <th colspan="1">N1/NP</th>
+                <th colspan="1">EGT/ITT</th>
+                <th colspan="1">N2/NH</th>
+                <th colspan="1">FUEL FLOW</th>
+                <th colspan="1">ENG BLEED</th>
+                <th colspan="1">VIB</th>
+                <th colspan="1">OIL PRESS</th>
+                <th colspan="1">OIL TEMP</th>
+              </tr>
+              <tr *ngFor="let cruise of cruiseData">
+                <th>ENGINE#1</th>
+                <td>{{ cruise.epr_tq_eng1 }}</td>
+                <td>{{ cruise.n1_np_eng1 }}</td>
+                <td>{{ cruise.egt_itt_eng1 }}</td>
+                <td>{{ cruise.n2_nh_eng1 }}</td>
+                <td>{{ cruise.fuel_flow_eng1 }}</td>
+                <td>{{ cruise.eng_bleed_eng1 }}</td>
+                <td>{{ cruise.vib_eng1 }}</td>
+                <td>{{ cruise.oil_press_eng1 }}</td>
+                <td>{{ cruise.oil_temp_eng1 }}</td>
+              </tr>
+              <tr *ngFor="let cruise of cruiseData">
+                <th>ENGINE#1</th>
+                <td>{{ cruise.epr_tq_eng2 }}</td>
+                <td>{{ cruise.n1_np_eng2 }}</td>
+                <td>{{ cruise.egt_itt_eng2 }}</td>
+                <td>{{ cruise.n2_nh_eng2 }}</td>
+                <td>{{ cruise.fuel_flow_eng2 }}</td>
+                <td>{{ cruise.eng_bleed_eng2 }}</td>
+                <td>{{ cruise.vib_eng2 }}</td>
+                <td>{{ cruise.oil_press_eng2 }}</td>
+                <td>{{ cruise.oil_temp_eng2 }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

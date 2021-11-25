@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Please fill this data to continue</h1>
+<hr />
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mt-4 col-12 p-0">
+    <div class="row">
+      <div class="col-4 mb-4">
+        <table>
+          <thead>
+            <tr>
+              <th class="text-center">CODE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" matInput formControlName="code" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-4">
+        <table>
+          <thead>
+            <tr>
+              <th class="text-center">TIME</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" matInput formControlName="time" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <mat-dialog-actions> <button mat-button type="submit">submit</button></mat-dialog-actions>
+  </form>
+</div>

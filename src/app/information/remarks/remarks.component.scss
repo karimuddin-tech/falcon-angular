@@ -1,0 +1,12 @@
+$air-table: #d7d6d6;
+$air-yellow: #ae8913;
+$air-border: #b5b4b3;
+
+::ng-deep .mat-form-field{width:100%;}
+::ng-deep textarea {height:80px;font-weight:500;line-height: 20px;}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+      border-radius: 10px !important;
+      padding: 14px 20px !important;
+      border: 1px solid $air-border;background-color: transparent;}
+      ::ng-deep .mat-form-field-underline{display: none;}::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+            color: $air-border;}

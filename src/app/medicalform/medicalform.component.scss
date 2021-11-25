@@ -1,0 +1,19 @@
+.top-date div {
+  float: right;
+}
+.top-date div span {
+  position: relative;
+  top: 10px;
+  right: 20px;
+  color: #d92731;
+}
+.bg-red {
+  background-color: #d92731;
+  text-align: center;
+  color: #ffffff;
+  padding: 16px 0px 6px;
+}
+::ng-deep .mat-typography h1 {
+  font-size: 26px;
+  font-weight: 500;
+}

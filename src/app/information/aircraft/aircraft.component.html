@@ -1,0 +1,74 @@
+<div class="mt-5 col-12">
+  <div class="row">
+    <div class="col-11 mt-4 mb-3">
+      <div class="text-right">
+        <button class="add" mat-button (click)="openDialog()">
+          ADD <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="col-3">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-left">Serial No</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ flightDetails.serial_no || ""}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-2">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-center">Leg No</th>
+            <th class="text-center">Page No</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ flightDetails.no_legs || "" }}</td>
+            <td>{{ flightDetails.page_no || "" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-center">AIRCRAFT TYPE</th>
+            <th class="text-center">AIRCRAFT REGISTRATION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+
+            <td>{{ flightDetails.aircraft_type || "" }}</td>
+            <td>{{ flightDetails.aircraft_registration || "" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-2">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-center">COCKPIT</th>
+            <th class="text-center">CABIN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ flightDetails.no_legs || "" }}</td>
+            <td>{{ flightDetails.no_legs || "" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

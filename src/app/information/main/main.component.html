@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12">
+    <app-aircraft></app-aircraft>
+
+    <app-flight-data></app-flight-data>
+    <div class="col-12 p-0 m-0">
+      <div class="row p-0 m-0">
+        <div class="col-3 p-0 m-0"><app-delay></app-delay></div>
+        <div class="col-3 p-0 m-0"><app-zero-fuel></app-zero-fuel></div>
+        <div class="col-6 p-0 m-0"><app-fuel></app-fuel></div>
+      </div>
+    </div>
+    <div class="col-12 p-0 m-0">
+      <div class="row p-0 m-0">
+        <div class="col-6 p-0 m-0">
+          <app-passenger-data></app-passenger-data>
+        </div>
+        <div class="col-6 p-0 m-0"><app-engine-data></app-engine-data></div>
+      </div>
+    </div>
+
+    <app-pilot-data></app-pilot-data>
+ 
+    <div class="col-12 form-end">
+      <button mat-button class="ml-3" (click)="onDone()">DONE</button
+      >
+    </div> 
+    <div></div>
+  </div>
+</div>

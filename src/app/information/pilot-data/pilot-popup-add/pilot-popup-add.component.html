@@ -1,0 +1,90 @@
+<h1 mat-dialog-title>Please fill this data to continue</h1>
+<hr />
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mt-4 col-12 p-0">
+    <div class="row">
+      <div class="col-5 mb-4">
+        <table>
+          <tr></tr>
+          <tr>
+            <th class="text-left">NAME</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" matInput formControlName="name" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-7">
+        <table>
+          <tr>
+            <th class="text-center">STATION</th>
+            <th class="text-center">UTC</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" matInput formControlName="station" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="pilot_utc" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-4">
+        <table>
+          <tr>
+            <th class="text-center">RANK</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" matInput formControlName="rank" />
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-4">
+        <table>
+          <tr>
+            <th class="text-center">STATUS</th>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <input type="checkbox" class="check-box" formControlName="is_active" />
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-4">
+        <table>
+          <tr>
+            <th class="text-center">EMPLOYEE NO.</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" matInput formControlName="employee_no" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-4 mt-4">
+        <table>
+          <tr>
+            <th class="text-center">LEG NUMBER</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" matInput formControlName="leg_number" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <mat-dialog-actions> <button mat-button mat-dialog-close type="submit">submit</button></mat-dialog-actions>
+  </form>
+</div>

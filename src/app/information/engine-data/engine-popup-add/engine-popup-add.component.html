@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Please fill this data to continue</h1>
+<hr />
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mt-4 col-12 p-0">
+    <div class="row">
+      <div class="mb-4">
+        <table>
+          <thead>
+            <tr>
+              <th class="text-center">OAT</th>
+              <th class="text-center">ENG#1 (EGT/ITT)</th>
+              <th class="text-center">ENG#2 (EGT/ITT)</th>
+              <th class="text-center">T/O PWR FULL- F REDUCED - R</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" matInput formControlName="oat" />
+              </td>
+              <td>
+                <input type="text" matInput formControlName="engine_egt_itt_eng1" />
+              </td>
+              <td>
+                <input type="text" matInput formControlName="engine_egt_itt_eng2" />
+              </td>
+              <td>
+                <input type="text" matInput formControlName="to_pwr" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <mat-dialog-actions> <button mat-button mat-dialog-close type="submit">submit</button></mat-dialog-actions>
+  </form>
+</div>

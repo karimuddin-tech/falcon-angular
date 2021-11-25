@@ -1,0 +1,177 @@
+<h1 mat-dialog-title>Please fill this data to continue</h1>
+<hr />
+<div mat-dialog-content>
+  <form
+    #cruiseForm="ngForm"
+    (ngSubmit)="onSubmit(cruiseForm.value)"
+    class="mt-4 col-12 p-0"
+  >
+ <div class="col-12">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-center">LEG NO</th>
+            <th class="text-center">UTC</th>
+            <th class="text-center">GROSS WT</th>
+            <th class="text-center">FLT LVL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" matInput ngModel name="leg_no" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="utc" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="gross_wt" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="flt_lvl" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-12 mt-4">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-center">TAT</th>
+            <th class="text-center">SAT</th>
+            <th class="text-center">MACH</th>
+            <th class="text-center">IAS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" matInput ngModel name="tat" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="sat" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="mach" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="ias" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-12 mt-4">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-center">AC PACK#1</th>
+            <th class="text-center">AC PACK#2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" matInput ngModel name="ac_pack_1" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="ac_pack_2" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 mt-4">
+      <table>
+ Engine #1
+          <tr>
+            <th class="text-center">EPR/TQ</th>
+            <th class="text-center">N1/NP</th>
+            <th class="text-center">EGT/ITT</th>
+            <th class="text-center">N2/NH</th>
+            <th class="text-center">FUEL FLOW</th>
+            <th class="text-center">VIB</th>
+            <th class="text-center">OIL PRESS</th>
+            <th class="text-center">OIL TEMP</th>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="text" matInput ngModel name="epr_tq_eng1" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="n1_np_eng1" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="egt_itt_eng1" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="n2_nh_eng1" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="fuel_flow_eng1" />
+            </td>
+
+            <td>
+              <input type="text" matInput ngModel name="vib_eng1" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="oil_press_eng1" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="oil_temp_eng1" />
+            </td>
+          </tr>
+      </table>
+    </div>
+    <div class="col-12 mt-4">
+      <table>
+ Engine #2
+          <tr>
+            <th class="text-center">EPR/TQ</th>
+            <th class="text-center">N1/NP</th>
+            <th class="text-center">EGT/ITT</th>
+            <th class="text-center">N2/NH</th>
+            <th class="text-center">FUEL FLOW</th>
+            <th class="text-center">VIB</th>
+            <th class="text-center">OIL PRESS</th>
+            <th class="text-center">OIL TEMP</th>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="text" matInput ngModel name="epr_tq_eng2" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="n1_np_eng2" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="egt_itt_eng2" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="n2_nh_eng2" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="fuel_flow_eng2" />
+            </td>
+
+            <td>
+              <input type="text" matInput ngModel name="vib_eng2" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="oil_press_eng2" />
+            </td>
+            <td>
+              <input type="text" matInput ngModel name="oil_temp_eng2" />
+            </td>
+          </tr>
+      </table>
+    </div>
+    <mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">submit</button></mat-dialog-actions
+    >
+  </form>
+</div>

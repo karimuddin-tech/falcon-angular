@@ -1,0 +1,98 @@
+<h1 mat-dialog-title>Please fill this data to continue</h1>
+<hr />
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mt-4 col-12 p-0">
+    <div class="row">
+      <div class="col-12 mb-4">
+        <table>
+          <tr>
+            <th class="text-left">LEG</th>
+            <th class="text-left">FLIGHT NUMBER</th>
+            <th class="text-left">DATE</th>
+            <th class="text-left">FROM</th>
+            <th class="text-left">TO</th>
+            <th class="text-left">BLOCKS OFF</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" matInput formControlName="leg" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="flt_no" />
+            </td>
+            <td>
+              <input type="date" matInput placeholder="01/10/2" formControlName="date" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="from" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="to" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="blocks_off" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-12 mb-4">
+        <table>
+          <tr>
+            <th class="text-left">TAKE OFF</th>
+            <th class="text-left">LANDING</th>
+            <th class="text-left">BLOCKS ON</th>
+            <th class="text-left">BLOCKS TIME</th>
+            <th class="text-left">BLOCKS TIME</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" matInput formControlName="take_off1" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="landing" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="blocks_on" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="block_time" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="air_time" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-12 mb-4">
+        <table>
+          <tr>
+            <th class="text-left">NIGHT TIME</th>
+            <th class="text-left">TAKE OFF</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" matInput formControlName="night_time" />
+            </td>
+            <td>
+              <input type="text" matInput formControlName="take_off2" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-12 mb-4">
+        <table>
+          <tr>
+            <th class="text-left">LAND</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" matInput formControlName="land" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <mat-dialog-actions> <button mat-button mat-dialog-close type="submit">submit</button></mat-dialog-actions>
+  </form>
+</div>

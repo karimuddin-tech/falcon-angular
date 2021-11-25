@@ -1,0 +1,50 @@
+<div class="col-12 mt-3">
+  <mat-accordion multi>
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header>
+        <mat-panel-title> PILOT DATA </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="text-right mt-4">
+        <button class="add" mat-button (click)="openAdd()">
+          ADD <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <form class="mt-3 col-12 p-0">
+        <div class="row">
+          <div class="col-12">
+            <table>
+              <tr>
+                <th colspan="1" rowspan="2">S NO.</th>
+                <th colspan="1" rowspan="2">RANK</th>
+                <th colspan="8" rowspan="2">NAME</th>
+                <th colspan="1" rowspan="2">EMPLOYEE NO.</th>
+                <th colspan="1">STATUS</th>
+                <th colspan="2">DUTY ON</th>
+                <th rowspan="2">EDIT</th>
+              </tr>
+              <tr>
+                <th>LEG NUMBER</th>
+                <th>STATION</th>
+                <th>UTC</th>
+              </tr>
+              <tr *ngFor="let pilots of flightPilotDetails">
+                <td colspan="1">{{ pilots.s_no }}</td>
+                <td colspan="1">{{ pilots.rank }}</td>
+                <td colspan="8">{{ pilots.name }}</td>
+                <td colspan="1">{{ pilots.employee_no }}</td>
+                <td colspan="1">{{ pilots.leg_number }}</td>
+                <td colspan="1">{{ pilots.station }}</td>
+                <td colspan="1">{{ pilots.utc }}</td>
+                <td class="text-center">
+                  <button mat-button (click)="edit(pilots.id)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </form>
+    </mat-expansion-panel></mat-accordion
+  >
+</div>
